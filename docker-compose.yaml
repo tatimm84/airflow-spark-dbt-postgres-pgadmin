@@ -1,3 +1,5 @@
+/* https://www.linkedin.com/pulse/building-server-postgres-airflow-simple-way-docker-rabelo-saraiva/ */
+
 version: '3'
 services:
 
@@ -6,9 +8,9 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_USER: airflow
-      POSTGRES_PASSWORD: airflow
-      POSTGRES_DB: airflow
+      - POSTGRES_USER: airflow
+      - POSTGRES_PASSWORD: airflow
+      - POSTGRES_DB: airflow
     volumes:
       - airflow-local-db-volume:/var/lib/postgresql/data
     healthcheck:
@@ -16,7 +18,16 @@ services:
       interval: 5s
       retries: 5
     restart: always
-
+    
+  pgadmin4:
+        image: dpage/pgadmin4
+        environment:
+            - PGADMIN_DEFAULT_EMAIL=contato@company.com
+            - PGADMIN_DEFAULT_PASSWORD=postgres
+        ports:
+            - "15432:80"
+        restart: always
+            
   airflow-webserver:
     image: airflow-base
     build:
