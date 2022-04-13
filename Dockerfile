@@ -44,12 +44,21 @@ ENV PYSPARK_PYTHON "/usr/local/bin/python"
 ENV PYTHONPATH "${SPARK_HOME}/python:${SPARK_HOME}/python/lib/py4j-${PY4J_VERSION}-src.zip:${PYTHONPATH}"
 ENV SPARK_OPTS "--driver-java-options=-Xms1024M --driver-java-options=-Xmx4096M --driver-java-options=-Dlog4j.logLevel=info"
 
+# INSTALL DBT
+RUN pip install airflow-dbt
+RUN pip install dbt-core
+RUN pip install dbt-bigquery
+RUN pip install dbt-postgres
+RUN pip install dbt-redshift
+RUN pip install dbt-snowflake
+
 # INSTALL YOUR OWN LIBS
 RUN pip install pyspark==3.0.0
 RUN pip install findspark
 RUN pip install xlrd
 RUN pip install azure-datalake-store
 RUN pip install pyarrow
+RUN pip install investpy
 
 USER airflow
 WORKDIR /home/airflow
