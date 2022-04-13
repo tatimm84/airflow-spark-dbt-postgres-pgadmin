@@ -25,7 +25,7 @@ services:
             - PGADMIN_DEFAULT_EMAIL=contato@company.com
             - PGADMIN_DEFAULT_PASSWORD=postgres
         ports:
-            - "15432:80"
+            - 15432:80
         restart: always
             
   airflow-webserver:
