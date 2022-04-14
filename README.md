@@ -1,4 +1,4 @@
-## Docker Desktop
+# Docker Desktop
 O ambiente designado para desenvolver a solução foi pre-configurado com o Airfow e o Spark em uma imagem docker. 
 
 Para executar este ambiente será necessário instalar em seu equipamento o Docker Desktop, disponível para download no seguinte link:
@@ -22,7 +22,7 @@ Se estiver utilizando Windows uma mensagem pop-up como a seguinte pode aparecer 
 
 Caso ocorra, basta clicar na opção: **Share it**.
 
-## Apache Airflow
+# Apache Airflow
 Ao executar o comando __docker-compose__ algumas mensagens de log aparecerão e o ambiente estará pronto para uso quando a saída do log estiver como na seguinte imagem:
 
 ![Docker Compose Logs](/_img/docker_compose_log.png?raw=true "Docker Compose Logs")
@@ -40,7 +40,7 @@ Uma dag de exemplo (sample.py) foi disponibilizada neste repositório para auxil
 
 ![Airflow Interface](/_img/airflow.png?raw=true "Airflow Interface")
 
-## Apache Spark
+# Apache Spark
 O Apache Spark (versão 3.1.1) está disponível na imagem docker junto com o Airflow, você poderá acessá-lo através do Spark Session no Python, exemplo:
 <pre><code>
 from pyspark.sql import SparkSession
@@ -55,7 +55,7 @@ spark = SparkSession.builder \
     .getOrCreate()
 </code></pre>
 
-## DBT
+# DBT
 O DBT está disponível na imagem docker junto com o Airflow, será necessário subir mais alguns arquivos para deixa-lo funcional, para então poder chama-lo dentro de uma dag:
 <pre><code>
 from airflow_dbt.operators.dbt_operator import DbtRunOperator, DbtDocsGenerateOperator
@@ -66,7 +66,7 @@ t_dbt_run = DbtRunOperator(
 )
 </code></pre>
 
-## Postgres
+# Postgres
 A interface visual do Postgres estará acessível no seguinte endereço:
 
 http://localhost:15432
