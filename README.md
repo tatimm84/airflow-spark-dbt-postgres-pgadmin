@@ -55,7 +55,7 @@ spark = SparkSession.builder \
     .getOrCreate()
 </code></pre>
 
-# DBT
+# DBT - Under Construction
 O DBT está disponível na imagem docker junto com o Airflow, será necessário subir mais alguns arquivos para deixa-lo funcional, para então poder chama-lo dentro de uma dag:
 <pre><code>
 from airflow_dbt.operators.dbt_operator import DbtRunOperator, DbtDocsGenerateOperator
