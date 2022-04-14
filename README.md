@@ -66,14 +66,14 @@ t_dbt_run = DbtRunOperator(
 )
 </code></pre>
 
-# Postgres and pgadmin
-A interface visual do Postgres estará acessível no seguinte endereço do pgadmin:
+# pgAdmin and Postgres
+A interface visual do Postgres estará acessível no seguinte endereço do pgAdmin:
 
 http://localhost:15432
 
 Este endereço mostrará uma página de login como na seguinte imagem:
 
-![Pgadmin Login](/_img/pgadmin_login.png?raw=true "Pgadmin Login")
+![pgAdmin Login](/_img/pgadmin_login.png?raw=true "pgAdmin Login")
 
 E poderá ser logada através das seguintes credenciais:
 
@@ -82,6 +82,21 @@ E poderá ser logada através das seguintes credenciais:
 
 Assim que logado, o usuário será encaminhado para outra página como na seguinte imagem:
 
-![Pgadmin Interface](/_img/pgadmin_main.png?raw=true "Pgadmin Interface")
+![pgAdmin Interface](/_img/pgadmin_main.png?raw=true "pgAdmin Interface")
+
+Para conectar ao servidor PostgreSQL na imagem docker, siga os seguintes passos:
+1. Clique com o botão direito em Servers e vá para Register > Server
+2. Na tab General, mude apenas o campo Name para localhost
+3. Na tab Connection, mude os campos para:
+    - Host name/address: Nome do container criado na imagem docker do postgres, digitando o comando docker ps (ex. building_server_postgres_postgres_1)
+    - Port: 5432
+    - Maintenance database: airflow
+    - Username: airflow
+    - Password: airflow
+4. Clique em salvar
+
+Agora temos acesso ao banco de dados PostgreSQL com a imagem docker e podemos ver que a base do airflow foi carregada no schema "airflow", como na imagem a seguir:
+
+![PostgreSQL Connection](/_img/postgres_connection.png?raw=true "PostgreSQL Connection")
 
 Para mais informações acesse https://www.linkedin.com/pulse/building-server-postgres-airflow-simple-way-docker-rabelo-saraiva/
