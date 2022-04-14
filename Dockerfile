@@ -46,11 +46,11 @@ ENV SPARK_OPTS "--driver-java-options=-Xms1024M --driver-java-options=-Xmx4096M 
 
 # INSTALL DBT
 RUN pip install airflow-dbt
-RUN pip install dbt-core
-RUN pip install dbt-bigquery
-RUN pip install dbt-postgres
-RUN pip install dbt-redshift
-RUN pip install dbt-snowflake
+#RUN pip install dbt-core
+#RUN pip install dbt-bigquery
+#RUN pip install dbt-postgres
+#RUN pip install dbt-redshift
+#RUN pip install dbt-snowflake
 
 # INSTALL YOUR OWN LIBS
 RUN pip install pyspark==3.0.0
