@@ -66,14 +66,22 @@ t_dbt_run = DbtRunOperator(
 )
 </code></pre>
 
-# Postgres
-A interface visual do Postgres estará acessível no seguinte endereço:
+# Postgres and pgadmin
+A interface visual do Postgres estará acessível no seguinte endereço do pgadmin:
 
 http://localhost:15432
 
-E poderá ser acessada através das seguintes credenciais:
+Este endereço mostrará uma página de login como na seguinte imagem:
+
+![Pgadmin Login](/_img/pgadmin_login.png?raw=true "Pgadmin Login")
+
+E poderá ser logada através das seguintes credenciais:
 
 - Email Address: contato@company.com
 - Password: postgres
+
+Assim que logado, o usuário será encaminhado para outra página como na seguinte imagem:
+
+![Pgadmin Interface](/_img/pgadmin_main.png?raw=true "Pgadmin Interface")
 
 Para mais informações acesse https://www.linkedin.com/pulse/building-server-postgres-airflow-simple-way-docker-rabelo-saraiva/
