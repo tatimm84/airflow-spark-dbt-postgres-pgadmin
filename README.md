@@ -56,4 +56,24 @@ spark = SparkSession.builder \
 </code></pre>
 
 ## DBT
+O DBT está disponível na imagem docker junto com o Airflow, será necessário subir mais alguns arquivos para deixa-lo funcional, para então poder chama-lo dentro de uma dag:
+<pre><code>
+from airflow_dbt.operators.dbt_operator import DbtRunOperator, DbtDocsGenerateOperator
 
+t_dbt_run = DbtRunOperator(
+        task_id='dbt_run',
+        full_refresh=False,
+)
+</code></pre>
+
+## Postgres
+A interface visual do Postgres estará acessível no seguinte endereço:
+
+http://localhost:15432
+
+E poderá ser acessada através das seguintes credenciais:
+
+- Email Address: contato@company.com
+- Password: postgres
+
+Para mais informações acesse https://www.linkedin.com/pulse/building-server-postgres-airflow-simple-way-docker-rabelo-saraiva/
